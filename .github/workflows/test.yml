@@ -1,0 +1,13 @@
+name: Test My Action
+
+on: [workflow_dispatch]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use my custom action
+        uses: your-username/my-custom-action@v1
+        with:
+          name: Emeka
