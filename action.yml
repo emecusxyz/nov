@@ -1,0 +1,16 @@
+name: "My Custom Action"
+description: "A simple action that prints a greeting"
+author: "Your Name"
+
+inputs:
+  name:
+    description: "Name of the person to greet"
+    required: true
+
+outputs:
+  message:
+    description: "The greeting message"
+
+runs:
+  using: "node20"
+  main: "index.js"
