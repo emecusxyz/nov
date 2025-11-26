@@ -1,16 +1,24 @@
-name: "My Custom Action"
-description: "A simple action that prints a greeting"
-author: "Your Name"
+name: "Custom Azure Deploy Action"
+description: "Deploy to Azure and call an API"
+runs:
+  using: "node16"
+  main: "index.js"
 
 inputs:
-  name:
-    description: "Name of the person to greet"
+  api_url:
+    description: "Endpoint to call"
     required: true
+  api_method:
+    description: "get or post"
+    required: false
+    default: "get"
+
+  api_body:
+    description: "JSON body for POST"
+    required: false
+    default: "{}"
 
 outputs:
-  message:
-    description: "The greeting message"
+  api_response:
+    description: "Response returned from the API"
 
-runs:
-  using: "node20"
-  main: "index.js"
