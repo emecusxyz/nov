@@ -1,0 +1,18 @@
+name: Test API Action
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Call API through custom action
+        uses: emecusxyz/your-action@v1
+        with:
+          api_url: "https://f408c2e05440.ngrok-free.app/api/tools"
+          api_method: "post"
+          api_body: '{"name":"hello","description":"world"}'
